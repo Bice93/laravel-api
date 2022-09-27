@@ -2,9 +2,9 @@
   <main>
     <div class="container">
         <div class="row">
-            <h1>Lista dei post:</h1>
+            <h1>Posts:</h1>
         </div>
-        <div class="col-6 offset-md-3">
+        <div class="row row-cols-1 row-cols-md-3">
             <PostCard v-for="post in posts" :key="post.id" :post="post"/>
         </div>
     </div>

@@ -1996,7 +1996,7 @@ var render = function render() {
   return _c("main", [_c("div", {
     staticClass: "container"
   }, [_vm._m(0), _vm._v(" "), _c("div", {
-    staticClass: "col-6 offset-md-3"
+    staticClass: "row row-cols-1 row-cols-md-3"
   }, _vm._l(_vm.posts, function (post) {
     return _c("PostCard", {
       key: post.id,
@@ -2013,7 +2013,7 @@ var staticRenderFns = [function () {
 
   return _c("div", {
     staticClass: "row"
-  }, [_c("h1", [_vm._v("Lista dei post:")])]);
+  }, [_c("h1", [_vm._v("Posts:")])]);
 }];
 render._withStripped = true;
 
@@ -2036,7 +2036,9 @@ var render = function render() {
       _c = _vm._self._c;
 
   return _c("div", {
-    staticClass: "card my-4 p-3"
+    staticClass: "col mb-4"
+  }, [_c("div", {
+    staticClass: "card p-3"
   }, [_c("img", {
     staticClass: "card-img-top",
     attrs: {
@@ -2049,15 +2051,15 @@ var render = function render() {
     staticClass: "card-title"
   }, [_vm._v(_vm._s(_vm.post.title))]), _vm._v(" "), _c("h6", {
     staticClass: "card-subtitle mb-2 text-muted"
-  }, [_vm._v("Written by: " + _vm._s(_vm.post.user.name) + " | " + _vm._s(_vm.post.post_date) + " ")]), _vm._v(" "), _c("p", {
+  }, [_vm._v("\n        Written by: " + _vm._s(_vm.post.user.name) + " | " + _vm._s(_vm.post.post_date) + "\n      ")]), _vm._v(" "), _c("p", {
     staticClass: "card-text"
-  }, [_vm._v("\n      " + _vm._s(_vm.post.post_content) + "\n    ")])]), _vm._v(" "), _c("div", {
+  }, [_vm._v("\n        " + _vm._s(_vm.post.post_content) + "\n      ")])]), _vm._v(" "), _c("div", {
     staticClass: "card-footer text-muted"
   }, _vm._l(_vm.post.tags, function (tag) {
     return _c("span", {
       key: tag.id
     }, [_vm._v(" #" + _vm._s(tag.name) + " ")]);
-  }), 0)]);
+  }), 0)])]);
 };
 
 var staticRenderFns = [];
