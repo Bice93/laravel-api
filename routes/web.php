@@ -33,3 +33,7 @@ Route::middleware('auth')
 
 // Route::middleware('auth')->get('/home', 'Admin\HomeController@index')->name('admin.home');
 // Route::middleware('auth')->resource('/posts', 'PostController');
+
+Route::get("{any?}", function(){ 
+    return view("guest.home"); 
+})->where("any", ".*");
