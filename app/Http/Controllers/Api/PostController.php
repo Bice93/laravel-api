@@ -54,12 +54,21 @@ class PostController extends Controller
      */
     public function show($id)
     {
-        $post = Post::findOrFail($id);
+        // $post = Post::findOrFail($id);
 
-        return response()->json([
-            'response' => true,
-            'result' => $post,
-        ]);
+        // return response()->json([
+        //     'response' => true,
+        //     'result' => $post,
+        // ]);
+
+        $post = Post::find($id);
+        if ($post){
+            return response()->json([
+                'response' => true,
+                'result' => $post,
+            ]);
+        }
+        else return response('', 404);
     }
 
     /**
