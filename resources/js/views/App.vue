@@ -1,12 +1,15 @@
 <template>
-  <div>
-    <h1>Lista Post</h1>
-  </div>
+  <section>
+    <MainComponent />
+  </section>
 </template>
 
 <script>
+import MainComponent from '../components/Main.vue';
 export default {
-
+    components : {
+        MainComponent
+    }
 }
 </script>
 
