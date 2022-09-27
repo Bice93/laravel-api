@@ -5,19 +5,20 @@
             <h1>Lista dei post:</h1>
         </div>
         <div class="col-6 offset-md-3">
-            <ul>
-                <li v-for="post in posts" :key="post.id">
-                    {{ post.title }}
-                </li>
-            </ul>
+            <PostCard v-for="post in posts" :key="post.id" :post="post"/>
         </div>
     </div>
   </main>
 </template>
 
 <script>
+import PostCard from './PostCard.vue';
 import axios from 'axios';
 export default {
+
+    components: {
+        PostCard
+    },
 
     data: function() {
         return{
