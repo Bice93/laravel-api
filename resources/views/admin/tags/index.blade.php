@@ -10,12 +10,25 @@
                         <hr>
                         <p class="mb-0"> {{ session('delete') }} has been removed!</p>
                     </div>
+                @elseif (session('created'))
+                    <div class="alert alert-success" role="alert">
+                        <h4 class="alert-heading">Well done!</h4>
+                        <hr>
+                        <p class="mb-0">{{ session('created') }} was successfully created!</p>
+                    </div>
+                @elseif (session('edited'))
+                    <div class="alert alert-warning" role="alert">
+                        <h4 class="alert-heading">Well done!</h4>
+                        <hr>
+                        <p class="mb-0">{{ session('edited') }} has been successfully modified!</p>
+                    </div>
                 @endif
                 <table class="table">
                     <thead>
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Name Tag</th>
+                            <th scope="col"><a class="btn btn-outline-primary" href="{{ route('admin.tags.create') }}">New Tag</a></th>
                             <th></th>
                         </tr>
                     </thead>

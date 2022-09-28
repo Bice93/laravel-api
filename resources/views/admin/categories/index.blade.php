@@ -18,6 +18,7 @@
                             <th scope="col">Name Category</th>
                             <th scope="col">Slug</th>
                             <th scope="col">Color</th>
+                            <th scope="col"><a class="btn btn-outline-primary" href="{{ route('admin.categories.create') }}">New Category</a></th>
                             <th></th>
                         </tr>
                     </thead>

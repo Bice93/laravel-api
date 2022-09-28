@@ -40,7 +40,9 @@ class TagController extends Controller
     {
         $data = $request->all();
         $newTag = new Tag();
-        return redirect()->route('admin.tags.index');
+        $newTag->name = $data['name'];
+        $newTag->save();
+        return redirect()->route('admin.tags.index')->with('created', $data['name']);
     }
 
     /**
@@ -77,7 +79,10 @@ class TagController extends Controller
     public function update(Request $request, $id)
     {
         $data = $request->all();
-        return redirect()->route('admin.tags.show');
+        $tag = Tag::findOrFail($id);
+        $tag->name = $data['name'];
+        $tag->save();
+        return redirect()->route('admin.tags.index')->with('edited', $data['name']);
     }
 
     /**
@@ -88,7 +93,10 @@ class TagController extends Controller
      */
     public function destroy($id)
     {
-        Tag::destroy($id);
-        return redirect()->route('admin.tags.index');
+        //Tag::destroy($id);
+        $tag = Tag::findOrFail($id);
+        $tag->delete();
+
+        return redirect()->route('admin.tags.index')->with('delete', $tag->name);
     }
 }
