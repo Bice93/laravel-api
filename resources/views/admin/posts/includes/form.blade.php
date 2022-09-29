@@ -23,9 +23,10 @@
     <select name="category_id" id="input-category">
         <option value="">no category</option>
         @foreach ($categories as $category)
-            <option value="{{ old('category_id', $category->id) }}"
+            <option value="{{ $category->id }}"
                 @isset( $post->category )
-                    {{ $category->id === $post->category->id ? 'selected' : '' }}
+                    {{-- {{ $category->id === $post->category->id ? 'selected' : '' }} --}}
+                    {{ old('category_id', $post->category_id) == $category->id ? 'selected' : '' }}
                 @endisset>
                 {{ $category->name }}
             </option>
